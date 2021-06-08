@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Counter from './counter';
 
 class App extends Component {
 	state = {
@@ -16,8 +17,15 @@ class App extends Component {
 		return (
 			<>
 				<h1>Hello Wdsordfld!</h1>
-				<h3>{this.state.count}</h3>
-				<button onClick={this.handleClick}>Click to increment count</button>
+				<h3>External counter</h3>
+				<p>{this.state.count}</p>
+				<div>
+					<h4>Internal counter</h4>
+					<Counter count={this.state.count} />
+				</div>
+				<button onClick={this.handleClick}>
+					Click to increment count everywhere
+				</button>
 			</>
 		);
 	}
