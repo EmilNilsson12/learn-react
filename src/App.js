@@ -1,23 +1,16 @@
 import { Component } from 'react';
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			count: 0,
-		};
-
-		// Bind to avoid arrow function methods
-		this.handleClick = this.handleClick.bind(this);
-	}
+	state = {
+		count: 0,
+	};
 
 	// Måste bindas för att funka
-	handleClick() {
+	handleClick = () => {
 		this.setState({
 			count: this.state.count + 1,
 		});
-	}
+	};
 
 	render() {
 		return (
