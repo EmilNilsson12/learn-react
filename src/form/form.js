@@ -30,6 +30,10 @@ class Form extends React.Component {
 				});
 				break;
 			}
+
+			default: {
+				break;
+			}
 		}
 	};
 
