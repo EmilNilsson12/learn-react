@@ -1,19 +1,14 @@
 import React from 'react';
+import './message.css';
 
 class Message extends React.Component {
-	state = {
-		outputHeading: this.props.outputHeading,
-		outputAuthor: this.props.outputAuthor,
-		outputTextArea: this.props.outputTextArea,
-	};
-
 	render() {
 		return (
-			<>
-				<h2>{this.state.outputHeading}</h2>
-				<p>{this.state.outputAuthor}</p>
-				<p>{this.state.outputTextArea}</p>
-			</>
+			<div id='outputText'>
+				<h2>{this.props.outputHeading}</h2>
+				<p>by: {this.props.outputAuthor}</p>
+				<p>{this.props.outputTextArea}</p>
+			</div>
 		);
 	}
 }

@@ -1,0 +1,9 @@
+#outputText {
+	width: 100%;
+	background-color: black;
+	padding-left: 40px;
+}
+
+#outputText > * {
+	color: white;
+}

@@ -6,9 +6,9 @@ import './App.css';
 class App extends React.Component {
 	state = {
 		inputValues: {
-			author: "You're title",
-			header: "You're author",
-			content: "You're cuntent",
+			header: "You're title",
+			author: "You're author",
+			content: "You're content",
 		},
 	};
 
@@ -22,13 +22,16 @@ class App extends React.Component {
 	render() {
 		return (
 			<>
-				<h1>Hej</h1>
 				<main>
 					<Form
 						inputValues={this.state.inputValues}
 						getNewText={this.saveNewText}
 					/>
-					<Message />
+					<Message
+						outputHeading={this.state.inputValues.header}
+						outputAuthor={this.state.inputValues.author}
+						outputTextArea={this.state.inputValues.content}
+					/>
 				</main>
 			</>
 		);
