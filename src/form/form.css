@@ -1,0 +1,25 @@
+#user-form {
+	background-color: bisque;
+}
+
+#user-form label {
+	display: block;
+	width: 100%;
+}
+
+#user-form input[type='text'],
+#user-form textarea {
+	background-color: rgba(0, 0, 0, 0.274);
+	width: 100%;
+
+	box-sizing: border-box;
+}
+
+#user-form input[type='submit'] {
+	float: right;
+	width: 100%;
+}
+
+/* #user-form input[type='submit'] {
+	background-color: red;
+} */
