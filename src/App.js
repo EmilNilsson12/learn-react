@@ -13,7 +13,6 @@ class App extends React.Component {
 	};
 
 	saveNewText = (getText) => {
-		console.log('Callback i App.js');
 		this.setState({
 			inputValues: getText,
 		});
@@ -27,11 +26,7 @@ class App extends React.Component {
 						inputValues={this.state.inputValues}
 						getNewText={this.saveNewText}
 					/>
-					<Message
-						outputHeading={this.state.inputValues.header}
-						outputAuthor={this.state.inputValues.author}
-						outputTextArea={this.state.inputValues.content}
-					/>
+					<Message outputValues={this.state.inputValues} />
 				</main>
 			</>
 		);

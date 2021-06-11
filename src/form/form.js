@@ -3,15 +3,12 @@ import './form.css';
 
 class Form extends React.Component {
 	state = {
-		author: this.props.author,
-		header: this.props.header,
-		content: this.props.content,
+		author: this.props.inputValues.author,
+		header: this.props.inputValues.header,
+		content: this.props.inputValues.content,
 	};
 
 	handleChange = (evt) => {
-		console.log(evt);
-		console.log(evt.target.id);
-
 		switch (evt.target.id) {
 			case 'header': {
 				this.setState({
@@ -38,7 +35,6 @@ class Form extends React.Component {
 
 	handleSubmit = (evt) => {
 		evt.preventDefault();
-		console.log('Something submitted...');
 
 		this.props.getNewText(this.state);
 	};
@@ -51,10 +47,10 @@ class Form extends React.Component {
 					<input
 						onChange={this.handleChange}
 						type='text'
-						value={this.state.header}
 						id='header'
 						name='header'
 						placeholder='The...'
+						value={this.state.header}
 					/>
 				</label>
 				<label>
@@ -62,10 +58,10 @@ class Form extends React.Component {
 					<input
 						onChange={this.handleChange}
 						type='text'
-						value={this.state.author}
 						id='author'
 						name='author'
 						placeholder='Mr...'
+						value={this.state.author}
 					/>
 				</label>
 				<label>
@@ -75,6 +71,7 @@ class Form extends React.Component {
 						name='content'
 						id='content'
 						placeholder='Once upon a time...'
+						value={this.state.content}
 					></textarea>
 				</label>
 				<input type='submit' />
