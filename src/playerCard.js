@@ -16,14 +16,12 @@ class PlayerCard extends React.Component {
 	};
 
 	handleNameChange = (evt) => {
-		console.log('Name will now update in state of this component');
 		this.setState({
 			name: evt.target.value,
 		});
 	};
 
 	propNameChange = () => {
-		console.log('Name will now update in App.js');
 		this.props.updateName(this.state);
 	};
 

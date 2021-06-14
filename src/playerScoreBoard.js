@@ -21,7 +21,6 @@ class PlayerScoreBoard extends React.Component {
 				/>
 			);
 		}
-		console.log(playersArray);
 
 		return playersArray;
 	}
