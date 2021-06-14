@@ -1,5 +1,6 @@
 import React from 'react';
 import PlayerCard from './playerCard';
+import PlayerScoreBoard from './playerScoreBoard';
 
 class App extends React.Component {
 	state = {
@@ -13,6 +14,11 @@ class App extends React.Component {
 				id: 2,
 				name: 'Petter',
 				score: 200,
+			},
+			{
+				id: 3,
+				name: 'Janne',
+				score: 2100,
 			},
 		],
 	};
@@ -52,8 +58,8 @@ class App extends React.Component {
 	render() {
 		return (
 			<>
-				<PlayerCard
-					player={this.state.players[0]}
+				<PlayerScoreBoard
+					players={this.state.players}
 					updateScore={this.updateScore}
 					updateName={this.updateName}
 				/>
