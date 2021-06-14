@@ -11,9 +11,6 @@ class PlayerScoreBoard extends React.Component {
 
 		for (let i = 0; i < this.state.players.length; i++) {
 			playersArray.push(
-				// <div key={this.props.players[i].id}>
-				// 	{this.props.players[i].name}: {this.props.players[i].score}
-				// </div>
 				<PlayerCard
 					key={this.props.players[i].id}
 					id={this.props.players[i].id}

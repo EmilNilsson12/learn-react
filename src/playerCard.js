@@ -29,7 +29,7 @@ class PlayerCard extends React.Component {
 
 	render() {
 		return (
-			<div id={this.state.id}>
+			<div id={this.state.name + '_with_ID_' + this.state.id}>
 				<label>
 					<input
 						type='text'

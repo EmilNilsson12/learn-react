@@ -1,5 +1,4 @@
 import React from 'react';
-import PlayerCard from './playerCard';
 import PlayerScoreBoard from './playerScoreBoard';
 
 class App extends React.Component {
@@ -31,7 +30,7 @@ class App extends React.Component {
 		let copyOfPlayersState = this.state.players;
 
 		// Update copy of state array
-		copyOfPlayersState.find((player) => player.id == id).score = score;
+		copyOfPlayersState.find((player) => player.id === id).score = score;
 
 		// Replace state array with copy of state array
 		this.setState({
@@ -47,7 +46,7 @@ class App extends React.Component {
 		let copyOfPlayersState = this.state.players;
 
 		// Update copy of state array
-		copyOfPlayersState.find((player) => player.id == id).name = name;
+		copyOfPlayersState.find((player) => player.id === id).name = name;
 
 		// Replace state array with copy of state array
 		this.setState({
