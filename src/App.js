@@ -1,25 +1,62 @@
 import React from 'react';
-import Input from './input';
-import ShowText from './showText';
+import PlayerCard from './playerCard';
 
 class App extends React.Component {
 	state = {
-		inputText: "You're name",
+		players: [
+			{
+				id: 1,
+				name: 'Emil',
+				score: 20,
+			},
+			{
+				id: 2,
+				name: 'Petter',
+				score: 200,
+			},
+		],
 	};
 
-	saveNewText = (getText) => {
-		console.log('Callback i App.js');
+	updateScore = (playerInfo) => {
+		// Deconstruct object from callback function
+		let { id, score } = playerInfo;
+
+		// Create copy of state array
+		let copyOfPlayersState = this.state.players;
+
+		// Update copy of state array
+		copyOfPlayersState.find((player) => player.id == id).score = score;
+
+		// Replace state array with copy of state array
 		this.setState({
-			inputText: getText,
+			players: copyOfPlayersState,
+		});
+	};
+
+	updateName = (playerInfo) => {
+		// Deconstruct object from callback function
+		let { id, name } = playerInfo;
+
+		// Create copy of state array
+		let copyOfPlayersState = this.state.players;
+
+		// Update copy of state array
+		copyOfPlayersState.find((player) => player.id == id).name = name;
+
+		// Replace state array with copy of state array
+		this.setState({
+			players: copyOfPlayersState,
 		});
 	};
 
 	render() {
 		return (
 			<>
-				<h1>Hej</h1>
-				<Input inputText={this.state.inputText} getNewText={this.saveNewText} />
-				<ShowText showText={this.state.inputText} />
+				<PlayerCard
+					player={this.state.players[0]}
+					updateScore={this.updateScore}
+					updateName={this.updateName}
+				/>
 			</>
 		);
 	}
