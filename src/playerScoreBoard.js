@@ -7,24 +7,22 @@ class PlayerScoreBoard extends React.Component {
 	};
 
 	render() {
-		let playersArray = [];
-
-		for (let player of this.state.players) {
-			playersArray.push(
-				<PlayerCard
-					key={player.id}
-					id={player.id}
-					name={player.name}
-					score={player.score}
-					updateScore={this.props.updateScore}
-					updateName={this.props.updateName}
-				/>
-			);
-		}
-
-		console.table(playersArray);
-
-		return playersArray;
+		return (
+			<>
+				{this.state.players.map((player) => {
+					return (
+						<PlayerCard
+							key={`${player.name}_with_ID_${player.id}`}
+							id={player.id}
+							name={player.name}
+							score={player.score}
+							updateScore={this.props.updateScore}
+							updateName={this.props.updateName}
+						/>
+					);
+				})}
+			</>
+		);
 	}
 }
 
