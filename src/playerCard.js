@@ -15,8 +15,8 @@ class PlayerCard extends React.Component {
 		this.props.updateScore(this.state);
 	};
 
-	handleNameChange = async (evt) => {
-		await this.setState({
+	handleNameChange = (evt) => {
+		this.setState({
 			name: evt.target.value,
 		});
 	};
