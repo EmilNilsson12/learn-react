@@ -8,17 +8,17 @@ class App extends React.Component {
 			{
 				id: 1,
 				name: 'Emil',
-				score: 20,
+				score: 0,
 			},
 			{
 				id: 2,
 				name: 'Petter',
-				score: 200,
+				score: 0,
 			},
 			{
 				id: 3,
 				name: 'Janne',
-				score: 2100,
+				score: 0,
 			},
 		],
 	};
