@@ -1,8 +1,20 @@
-body {
-	counter-reset: playerCard;
+#mini-player-scoreboard {
+	counter-reset: miniPlayerCard;
 }
 
-.playerCard::before {
-	counter-increment: playerCard;
-	content: counter(playerCard) ' ';
+.miniPlayerCard::before {
+	counter-increment: miniPlayerCard;
+	content: counter(miniPlayerCard) ' ';
+}
+
+.miniPlayerCard:first-child {
+	background-color: gold;
+}
+
+.miniPlayerCard:nth-child(2) {
+	background-color: silver;
+}
+
+.miniPlayerCard:nth-child(3) {
+	background-color: burlywood;
 }

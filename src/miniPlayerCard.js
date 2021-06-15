@@ -1,5 +1,4 @@
 import React from 'react';
-import './playerCard.css';
 
 class MiniPlayerCard extends React.Component {
 	render() {

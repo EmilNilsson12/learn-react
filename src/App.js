@@ -21,6 +21,26 @@ class App extends React.Component {
 				name: 'Janne',
 				score: 0,
 			},
+			{
+				id: 4,
+				name: 'Jenni',
+				score: 0,
+			},
+			{
+				id: 5,
+				name: 'Ida',
+				score: 0,
+			},
+			{
+				id: 6,
+				name: 'Rakib',
+				score: 0,
+			},
+			{
+				id: 7,
+				name: 'Fredrik',
+				score: 0,
+			},
 		],
 	};
 

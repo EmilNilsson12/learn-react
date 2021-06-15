@@ -4,8 +4,8 @@ import MiniPlayerCard from './miniPlayerCard';
 class MiniPlayerScoreBoard extends React.Component {
 	render() {
 		return (
-			<>
-				{this.props.players
+			<div id='mini-player-scoreboard'>
+				{[...this.props.players]
 					.sort((a, b) => {
 						return a.score < b.score ? 1 : -1;
 					})
@@ -19,7 +19,7 @@ class MiniPlayerScoreBoard extends React.Component {
 							/>
 						);
 					})}
-			</>
+			</div>
 		);
 	}
 }
