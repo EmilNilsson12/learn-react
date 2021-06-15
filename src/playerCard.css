@@ -1,0 +1,8 @@
+.playerCard {
+	padding-bottom: 10px;
+}
+
+.playerCard input,
+.playerCard label {
+	display: block;
+}

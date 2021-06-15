@@ -1,4 +1,5 @@
 import React from 'react';
+import './playerCard.css';
 
 class PlayerCard extends React.Component {
 	state = {
@@ -27,14 +28,21 @@ class PlayerCard extends React.Component {
 
 	render() {
 		return (
-			<div id={this.state.name + '_with_ID_' + this.state.id}>
+			<div
+				id={this.state.name + '_with_ID_' + this.state.id}
+				className='playerCard'
+			>
 				<label>
+					Name:
 					<input
 						type='text'
 						value={this.state.name}
 						onChange={this.handleNameChange}
 						onBlur={this.propNameChange}
 					/>
+				</label>
+				<label>
+					Score:
 					<input
 						type='number'
 						onChange={this.handleScoreChange}

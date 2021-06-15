@@ -1,5 +1,6 @@
 import React from 'react';
 import PlayerScoreBoard from './playerScoreBoard';
+import './App.css';
 
 class App extends React.Component {
 	state = {
@@ -59,6 +60,7 @@ class App extends React.Component {
 			<>
 				<h1>Current scores</h1>
 				<PlayerScoreBoard
+					id='player-score-board'
 					players={this.state.players}
 					updateScore={this.updateScore}
 					updateName={this.updateName}

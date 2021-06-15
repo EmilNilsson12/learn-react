@@ -1,0 +1,8 @@
+body {
+	counter-reset: playerCard;
+}
+
+.playerCard::before {
+	counter-increment: playerCard;
+	content: counter(playerCard) ' ';
+}

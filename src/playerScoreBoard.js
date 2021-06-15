@@ -2,14 +2,10 @@ import React from 'react';
 import PlayerCard from './playerCard';
 
 class PlayerScoreBoard extends React.Component {
-	state = {
-		players: this.props.players,
-	};
-
 	render() {
 		return (
 			<>
-				{this.state.players.map((player) => {
+				{this.props.players.map((player) => {
 					return (
 						<PlayerCard
 							key={`${player.name}_with_ID_${player.id}`}
