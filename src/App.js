@@ -1,5 +1,6 @@
 import React from 'react';
 import PlayerScoreBoard from './playerScoreBoard';
+import MiniPlayerScoreBoard from './miniPlayerScoreBoard';
 import './App.css';
 
 class App extends React.Component {
@@ -59,6 +60,11 @@ class App extends React.Component {
 		return (
 			<>
 				<h1>Current scores</h1>
+				<MiniPlayerScoreBoard
+					id='player-score-board'
+					players={this.state.players}
+				/>
+
 				<PlayerScoreBoard
 					id='player-score-board'
 					players={this.state.players}
