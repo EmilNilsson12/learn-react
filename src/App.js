@@ -1,47 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PlayerScoreBoard from './playerScoreBoard';
 import MiniPlayerScoreBoard from './miniPlayerScoreBoard';
+import NewPlayerForm from './newPlayerForm';
 import './App.css';
 
+let id = 10;
+
+const LOCAL_STORAGE_KEY_PLAYERS = 'registered.players';
 class App extends React.Component {
 	state = {
-		players: [
-			{
-				id: 1,
-				name: 'Emil',
-				score: 0,
-			},
-			{
-				id: 2,
-				name: 'Petter',
-				score: 0,
-			},
-			{
-				id: 3,
-				name: 'Janne',
-				score: 0,
-			},
-			{
-				id: 4,
-				name: 'Jenni',
-				score: 0,
-			},
-			{
-				id: 5,
-				name: 'Ida',
-				score: 0,
-			},
-			{
-				id: 6,
-				name: 'Rakib',
-				score: 0,
-			},
-			{
-				id: 7,
-				name: 'Fredrik',
-				score: 0,
-			},
-		],
+		players: [],
 	};
 
 	updateScore = (playerInfo) => {
@@ -76,6 +44,19 @@ class App extends React.Component {
 		});
 	};
 
+	addNewPlayer = (newPlayerName) => {
+		console.log(newPlayerName);
+		// Create copy of state array
+		let copyOfPlayersState = [
+			...this.state.players,
+			{ id: ++id, name: newPlayerName, score: 0 },
+		];
+
+		this.setState({
+			players: copyOfPlayersState,
+		});
+	};
+
 	render() {
 		return (
 			<>
@@ -84,7 +65,7 @@ class App extends React.Component {
 					id='player-score-board'
 					players={this.state.players}
 				/>
-
+				<NewPlayerForm addNewPlayer={this.addNewPlayer} />
 				<PlayerScoreBoard
 					id='player-score-board'
 					players={this.state.players}
