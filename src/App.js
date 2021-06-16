@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PlayerScoreBoard from './playerScoreBoard';
 import MiniPlayerScoreBoard from './miniPlayerScoreBoard';
 import NewPlayerForm from './newPlayerForm';
