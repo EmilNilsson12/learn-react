@@ -14,6 +14,7 @@ class PlayerScoreBoard extends React.Component {
 							score={player.score}
 							updateScore={this.props.updateScore}
 							updateName={this.props.updateName}
+							deletePlayer={this.props.deletePlayer}
 						/>
 					);
 				})}

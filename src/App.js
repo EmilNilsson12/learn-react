@@ -1,14 +1,14 @@
 import React from 'react';
+import uuidv4 from 'uuid/dist/v4';
+
 import PlayerScoreBoard from './playerScoreBoard';
 import MiniPlayerScoreBoard from './miniPlayerScoreBoard';
 import NewPlayerForm from './newPlayerForm';
 import './App.css';
 
-let id = 10;
-
 class App extends React.Component {
 	state = {
-		players: [],
+		players: JSON.parse(localStorage.getItem('players')) || [],
 	};
 
 	updateScore = (playerInfo) => {
@@ -48,7 +48,7 @@ class App extends React.Component {
 		// Create copy of state array
 		let copyOfPlayersState = [
 			...this.state.players,
-			{ id: ++id, name: newPlayerName, score: 0 },
+			{ id: uuidv4(), name: newPlayerName, score: 0 },
 		];
 
 		this.setState({
@@ -56,7 +56,25 @@ class App extends React.Component {
 		});
 	};
 
+	deletePlayer = (playerId) => {
+		// Filter out removed player by id
+		let copyOfPlayersState = [...this.state.players].filter(
+			(player) => player.id !== playerId
+		);
+
+		// Replace state array with copy of state array
+		this.setState({
+			players: copyOfPlayersState,
+		});
+
+		console.log('Player deleted');
+		console.table(this.state.players);
+	};
+
 	render() {
+		console.log('Array of players updated');
+		console.table(this.state.players);
+		localStorage.setItem('players', JSON.stringify(this.state.players));
 		return (
 			<>
 				<h1>Current scores</h1>
@@ -70,6 +88,7 @@ class App extends React.Component {
 					players={this.state.players}
 					updateScore={this.updateScore}
 					updateName={this.updateName}
+					deletePlayer={this.deletePlayer}
 				/>
 			</>
 		);

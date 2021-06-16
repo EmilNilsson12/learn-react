@@ -18,3 +18,7 @@
 .miniPlayerCard:nth-child(3) {
 	background-color: burlywood;
 }
+
+input[type='number'] {
+	width: 45px;
+}
