@@ -29,6 +29,10 @@ class PlayerCard extends React.Component {
 		this.props.updateName(this.state);
 	};
 
+	deletePlayer = () => {
+		this.props.deletePlayer(this.state.id);
+	};
+
 	render() {
 		return (
 			<div
@@ -52,6 +56,7 @@ class PlayerCard extends React.Component {
 						value={this.state.score}
 					/>
 				</label>
+				<button onClick={this.deletePlayer}>Delete this player</button>
 			</div>
 		);
 	}
