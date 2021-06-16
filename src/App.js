@@ -44,7 +44,6 @@ class App extends React.Component {
 	};
 
 	addNewPlayer = (newPlayerName) => {
-		console.log(newPlayerName);
 		// Create copy of state array
 		let copyOfPlayersState = [
 			...this.state.players,
@@ -66,14 +65,9 @@ class App extends React.Component {
 		this.setState({
 			players: copyOfPlayersState,
 		});
-
-		console.log('Player deleted');
-		console.table(this.state.players);
 	};
 
 	render() {
-		console.log('Array of players updated');
-		console.table(this.state.players);
 		localStorage.setItem('players', JSON.stringify(this.state.players));
 		return (
 			<>

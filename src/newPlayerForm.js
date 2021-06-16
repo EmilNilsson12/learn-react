@@ -13,7 +13,6 @@ class NewPlayerForm extends React.Component {
 
 	handleSubmit = (evt) => {
 		evt.preventDefault();
-		console.log('HEllo');
 
 		if (this.state.name !== '') {
 			document.getElementById('new-player-input').value = '';
