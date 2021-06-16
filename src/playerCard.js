@@ -8,8 +8,12 @@ class PlayerCard extends React.Component {
 	};
 
 	handleScoreChange = async (evt) => {
+		let newScore = parseInt(evt.target.value, 10);
+
+		if (Number.isNaN(newScore)) newScore = 0;
+
 		await this.setState({
-			score: parseInt(evt.target.value, 10),
+			score: newScore,
 		});
 
 		this.props.updateScore(this.state);
