@@ -6,7 +6,6 @@ import './App.css';
 
 let id = 10;
 
-const LOCAL_STORAGE_KEY_PLAYERS = 'registered.players';
 class App extends React.Component {
 	state = {
 		players: [],
