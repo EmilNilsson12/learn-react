@@ -14,10 +14,13 @@ class NewPlayerForm extends React.Component {
 	handleSubmit = (evt) => {
 		evt.preventDefault();
 
-		if (this.state.name !== '') {
+		if (this.state.name.trim() !== '') {
 			document.getElementById('new-player-input').value = '';
 
 			this.props.addNewPlayer(this.state.name);
+			this.setState({
+				name: '',
+			});
 		}
 	};
 	render() {
