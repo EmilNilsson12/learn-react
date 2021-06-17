@@ -53,7 +53,7 @@ class PlayerCard extends React.Component {
 					<input
 						type='number'
 						onChange={this.handleScoreChange}
-						value={this.state.score}
+						value={this.props.score}
 					/>
 				</label>
 				<button onClick={this.deletePlayer}>Delete this player</button>
