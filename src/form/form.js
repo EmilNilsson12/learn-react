@@ -9,32 +9,9 @@ class Form extends React.Component {
 	};
 
 	handleChange = (evt) => {
-		switch (evt.target.id) {
-			case 'header': {
-				this.setState({
-					header: evt.target.value,
-				});
-				break;
-			}
-
-			case 'author': {
-				this.setState({
-					author: evt.target.value,
-				});
-				break;
-			}
-
-			case 'content': {
-				this.setState({
-					content: evt.target.value,
-				});
-				break;
-			}
-
-			default: {
-				break;
-			}
-		}
+		this.setState({
+			[evt.target.name]: evt.target.value,
+		});
 	};
 
 	handleSubmit = (evt) => {
