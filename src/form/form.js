@@ -28,7 +28,6 @@ class Form extends React.Component {
 					<input
 						onChange={this.handleChange}
 						type='text'
-						id='header'
 						name='header'
 						placeholder='The...'
 						value={this.state.header}
@@ -39,7 +38,6 @@ class Form extends React.Component {
 					<input
 						onChange={this.handleChange}
 						type='text'
-						id='author'
 						name='author'
 						placeholder='Mr...'
 						value={this.state.author}
@@ -50,7 +48,6 @@ class Form extends React.Component {
 					<textarea
 						onChange={this.handleChange}
 						name='content'
-						id='content'
 						placeholder='Once upon a time...'
 						value={this.state.content}
 					></textarea>
