@@ -46,15 +46,15 @@ class App extends React.Component {
 		});
 	};
 
-	componentDidUpdate() {
+	async componentDidUpdate() {
 		console.log('Component did update');
-		// const data = await fetch(
-		// 	`https://api.mymemory.translated.net/get?q=${this.state.inputText}!&langpair=${this.state.translatingFrom}|${this.state.currentLanguage.code}`
-		// ).then((res) => res.json());
-		// console.log(data);
-		// this.setState({
-		// 	outputText: data.responseData.translatedText,
-		// });
+		const data = await fetch(
+			`https://api.mymemory.translated.net/get?q=${this.state.inputText}!&langpair=${this.state.translatingFrom}|${this.state.currentLanguage.code}`
+		).then((res) => res.json());
+		console.log(data);
+		this.setState({
+			outputText: data.responseData.translatedText,
+		});
 	}
 
 	render() {
