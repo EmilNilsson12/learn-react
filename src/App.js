@@ -7,23 +7,27 @@ class App extends React.Component {
 	state = {
 		inputText: '',
 
+		outputText: '',
+
+		translatingFrom: 'sv',
+
 		currentLanguage: {
-			language: 'English',
-			code: 'EN',
+			language: 'Engelska',
+			code: 'en',
 		},
 
 		supportedLanguages: [
 			{
-				language: 'English',
-				code: 'EN',
+				language: 'Engelska',
+				code: 'en',
 			},
 			{
-				language: 'German',
-				code: 'DE',
+				language: 'Tyska',
+				code: 'de',
 			},
 			{
-				language: 'Danish',
-				code: 'DA',
+				language: 'Danska',
+				code: 'da',
 			},
 		],
 	};
@@ -35,16 +39,22 @@ class App extends React.Component {
 	};
 
 	changeCurrentLanguage = (getLanguageCode) => {
-		// log getLanguageCode
-		console.log('Language in callback: ', getLanguageCode);
-
-		// Find lanObj in supportedLanguages
 		this.setState({
 			currentLanguage: this.state.supportedLanguages.find(
 				(obj) => obj.code === getLanguageCode
 			),
 		});
 	};
+
+	async componentDidUpdate() {
+		const data = await fetch(
+			`https://api.mymemory.translated.net/get?q=${this.state.inputText}!&langpair=${this.state.translatingFrom}|${this.state.currentLanguage.code}`
+		).then((res) => res.json());
+		console.log(data);
+		this.setState({
+			outputText: data.responseData.translatedText,
+		});
+	}
 
 	render() {
 		return (
@@ -57,8 +67,8 @@ class App extends React.Component {
 					changeCurrentLanguage={this.changeCurrentLanguage}
 				/>
 				<TranslatedText
-					translatedText={this.state.inputText}
-					translatedTextLan={this.state.translatedTextLan}
+					translatedText={this.state.outputText}
+					translatedTextLan={this.state.currentLanguage.language}
 				/>
 			</>
 		);

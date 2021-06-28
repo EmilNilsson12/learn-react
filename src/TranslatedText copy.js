@@ -4,9 +4,7 @@ class TranslatedText extends React.Component {
 	render() {
 		return (
 			<>
-				<p>
-					På <strong>{this.props.translatedTextLan}:</strong>
-				</p>
+				<p>På {this.props.translatedTextLan}</p>
 				<p>{this.props.translatedText}</p>
 			</>
 		);
