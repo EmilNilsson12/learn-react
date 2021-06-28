@@ -9,8 +9,6 @@ class Input extends React.Component {
 		await this.setState({
 			inputText: evt.target.value,
 		});
-
-		this.onSubmit(evt);
 	};
 
 	onSubmit = (evt) => {
@@ -25,6 +23,7 @@ class Input extends React.Component {
 				type='text'
 				value={this.state.inputText}
 				onChange={this.onChange}
+				onBlur={this.onSubmit}
 			/>
 		);
 	}
