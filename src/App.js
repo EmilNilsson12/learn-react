@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from './input';
-import ShowText from './showText';
+import TranslatedText from './TranslatedText';
 
 class App extends React.Component {
 	state = {
@@ -8,7 +8,6 @@ class App extends React.Component {
 	};
 
 	saveNewText = (getText) => {
-		console.log('Callback i App.js');
 		this.setState({
 			inputText: getText,
 		});
@@ -17,9 +16,9 @@ class App extends React.Component {
 	render() {
 		return (
 			<>
-				<h1>Hej</h1>
+				<h4>Skriv in text som du vill översätta från svenska:</h4>
 				<Input inputText={this.state.inputText} getNewText={this.saveNewText} />
-				<ShowText showText={this.state.inputText} />
+				<TranslatedText showText={this.state.inputText} />
 			</>
 		);
 	}

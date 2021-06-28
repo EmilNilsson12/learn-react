@@ -5,30 +5,27 @@ class Input extends React.Component {
 		inputText: this.props.inputText,
 	};
 
-	onChange = (evt) => {
-		console.log('Something changed...');
-		this.setState({
+	onChange = async (evt) => {
+		await this.setState({
 			inputText: evt.target.value,
 		});
+
+		this.onSubmit(evt);
 	};
 
 	onSubmit = (evt) => {
 		evt.preventDefault();
-		console.log('Something submitted...');
 
 		this.props.getNewText(this.state.inputText);
 	};
 
 	render() {
 		return (
-			<form onSubmit={this.onSubmit}>
-				<input
-					type='text'
-					value={this.state.inputText}
-					onChange={this.onChange}
-				/>
-				<input type='submit' />
-			</form>
+			<input
+				type='text'
+				value={this.state.inputText}
+				onChange={this.onChange}
+			/>
 		);
 	}
 }
